@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="js/calculator.js" defer></script>
 <script src="js/contact-form.js" defer></script>
+<script src="js/validation.js" defer></script>
 </head>
 <body>
 <!-- Семантичні орієнтири допомагають навігації та скринрідерам. -->
@@ -462,18 +463,43 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 		</div>
 	</section>
 
-	<section class="contact block" id="contact" aria-labelledby="contact-title">
-		<div class="contact-inner">
-			<div class="contact-copy">
+	<section class="contact block !bg-[#bd804d]" id="contact" aria-labelledby="contact-title">
+		<div class="contact-inner !grid-cols-1">
+			<div class="contact-copy col-span-full w-full !max-w-none">
 				<p class="eyebrow">Зворотний зв’язок</p>
 				<h2 id="contact-title">Зв’яжіться з нами</h2>
 				<p>Запитайте про вільні дати, ознайомчий візит або будь-що, що вас цікавить.</p>
-				<form id="contact-form" class="contact-form">
-					<div class="form-field"><label for="name">Ім’я</label><input id="name" name="name" type="text" placeholder="Ваше ім’я" autocomplete="name" required></div>
-					<div class="form-field"><label for="email">Електронна пошта</label><input id="email" name="email" type="email" placeholder="Ваша адреса" autocomplete="email" required></div>
-					<div class="form-field"><label for="message">Повідомлення</label><textarea id="message" name="message" rows="5" placeholder="Напишіть ваше повідомлення…" required></textarea></div>
-					<div class="consent-field"><input id="consent" name="consent" type="checkbox" required><label for="consent">Погоджуюся, щоб зі мною зв’язалися щодо запиту.</label></div>
-					<button class="button button-dark transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2" type="submit">Надіслати повідомлення</button>
+				<form id="feedbackForm" class="contact-form !mt-0 mx-auto w-full max-w-2xl rounded-card bg-white p-5 text-ink shadow-video sm:p-8" novalidate>
+					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+						<div class="form-field gap-1">
+							<label for="username" class="text-sm font-semibold text-ink">Ім’я</label>
+							<input id="username" name="username" type="text" autocomplete="name" aria-describedby="usernameError" required class="min-h-11 !w-full !rounded-card !border !border-ink/30 !bg-white !px-3 !py-2 !text-ink transition-colors hover:!border-ink/60 focus-visible:!border-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 aria-[invalid=true]:!border-red-500 aria-[invalid=false]:!border-green-500">
+							<p id="usernameError" class="hidden text-sm text-red-700" role="alert"></p>
+						</div>
+						<div class="form-field gap-1">
+							<label for="email" class="text-sm font-semibold text-ink">Електронна пошта</label>
+							<input id="email" name="email" type="email" autocomplete="email" aria-describedby="emailError" required class="min-h-11 !w-full !rounded-card !border !border-ink/30 !bg-white !px-3 !py-2 !text-ink transition-colors hover:!border-ink/60 focus-visible:!border-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 aria-[invalid=true]:!border-red-500 aria-[invalid=false]:!border-green-500">
+							<p id="emailError" class="hidden text-sm text-red-700" role="alert"></p>
+						</div>
+					</div>
+					<div class="form-field gap-1">
+						<label for="phone" class="text-sm font-semibold text-ink">Телефон</label>
+						<input id="phone" name="phone" type="tel" autocomplete="tel" aria-describedby="phoneError" class="min-h-11 !w-full !rounded-card !border !border-ink/30 !bg-white !px-3 !py-2 !text-ink transition-colors hover:!border-ink/60 focus-visible:!border-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 aria-[invalid=true]:!border-red-500 aria-[invalid=false]:!border-green-500">
+						<p id="phoneError" class="hidden text-sm text-red-700" role="alert"></p>
+					</div>
+					<div class="form-field gap-1">
+						<label for="message" class="text-sm font-semibold text-ink">Повідомлення</label>
+						<textarea id="message" name="message" rows="5" aria-describedby="messageError" required class="min-h-32 !w-full !resize-y !rounded-card !border !border-ink/30 !bg-white !px-3 !py-2 !text-ink transition-colors hover:!border-ink/60 focus-visible:!border-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 aria-[invalid=true]:!border-red-500 aria-[invalid=false]:!border-green-500"></textarea>
+						<p id="messageError" class="hidden text-sm text-red-700" role="alert"></p>
+					</div>
+					<div class="consent-field !items-start gap-2">
+						<input id="agreement" name="agreement" type="checkbox" aria-describedby="agreementError" required class="mt-1 h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 aria-[invalid=true]:accent-red-500 aria-[invalid=false]:accent-green-500">
+						<div>
+							<label for="agreement" class="text-sm text-ink">Погоджуюся, щоб зі мною зв’язалися щодо запиту.</label>
+							<p id="agreementError" class="hidden text-sm text-red-700" role="alert"></p>
+						</div>
+					</div>
+					<button class="button button-dark !min-h-11 !w-full rounded-card px-5 font-semibold transition-colors hover:bg-ink-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2" type="submit">Надіслати</button>
 					<p id="contact-status" role="status" aria-live="polite"></p>
 				</form>
 			</div>
@@ -583,6 +609,13 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 			</div>
 		</div>
 	</footer>
+	<div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4" aria-hidden="true">
+		<div id="successDialog" role="dialog" aria-modal="true" aria-labelledby="successModalTitle" aria-describedby="successModalMessage" tabindex="-1" class="w-full max-w-lg rounded-card bg-white p-6 text-ink shadow-video sm:p-8">
+			<h2 id="successModalTitle" class="text-2xl font-bold">Дякуємо!</h2>
+			<p id="successModalMessage" class="mt-3">Форма успішно пройшла клієнтську валідацію. Демонстрація успішного надсилання.</p>
+			<button id="closeSuccessModal" type="button" class="mt-6 inline-flex min-h-11 items-center justify-center rounded-card bg-ink px-5 font-semibold text-white transition-colors hover:bg-ink-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Закрити</button>
+		</div>
+	</div>
 	<script src="https://sinoptik.ua/api/informer/content?loc=bwCOPQ6RBMAlPUoebrAObrFr&amp;cem=iKDRcObHcSjHBhD7cM=0cTYUcnHObMFrbSju2M2U2kj" defer></script>
 </body>
 </html>
