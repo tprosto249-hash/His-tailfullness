@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Преміальний cage-free готель для собак і котів у Львові: комфортні номери, ветеринарна турбота, щоденні фото та безкоштовний адаптаційний візит.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&amp;subset=cyrillic,latin&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://sinoptik.ua/resources/informer/css/informer.css">
+	<title>Його Хвостатість | Готель для собак і котів</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { DEFAULT: '#f7bd91', soft: '#fcf4ef', accent: '#f4a163', deep: '#bd804d' },
+          ink: { DEFAULT: '#111111', hover: '#33261d' },
+          muted: '#f3f3f3'
+        },
+        fontFamily: { sans: ['Nunito', 'sans-serif'] },
+        borderRadius: { card: '0.625rem' },
+        boxShadow: { video: '0 12px 28px rgba(45,31,20,0.18)' },
+        maxWidth: { container: '75rem' }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/calculator.js" defer></script>
+<script src="js/contact-form.js" defer></script>
+</head>
+<body>
+<!-- Семантичні орієнтири допомагають навігації та скринрідерам. -->
+<header id="home" class="relative font-sans text-ink">
+	<div class="header-topbar">
+		<a href="#home" class="flex min-h-11 items-center rounded-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand">
+			<img src="assets/images/logo.svg" alt="Його Хвостатість" class="header-logo-image">
+		</a>
+		<button type="button" id="nav-toggle" aria-label="Відкрити меню" aria-expanded="false" aria-controls="site-nav" class="inline-flex h-11 w-11 items-center justify-center rounded-card transition-colors transition-shadow duration-150 hover:bg-ink/10 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand">
+			<svg class="nav-icon-open h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+			<svg class="nav-icon-close h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+		</button>
+		<a href="#calculator" class="inline-flex min-h-11 items-center justify-center rounded-card bg-ink px-4 text-sm font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand sm:px-6">Забронювати</a>
+
+		<nav id="site-nav" aria-label="Головна навігація" data-open="false" aria-hidden="true" inert class="site-nav col-span-3">
+			<div class="site-nav-inner">
+				<div class="grid grid-cols-1 gap-2 border-t border-ink/15 py-3 md:grid-cols-2 lg:grid-cols-4">
+					<section class="px-2 py-2" aria-labelledby="menu-sections">
+						<p id="menu-sections" class="px-2 text-sm font-bold">Розділи</p>
+						<ul class="mt-1 flex flex-col">
+							<li><a href="#home" class="menu-link">Головна</a></li>
+							<li><a href="#calculator" class="menu-link">Калькулятор</a></li>
+							<li><a href="#benefits" class="menu-link">Переваги</a></li>
+							<li><a href="#pricing" class="menu-link">Ціни</a></li>
+							<li><a href="#suites" class="menu-link">Номери</a></li>
+							<li><a href="#process" class="menu-link">Як це працює</a></li>
+							<li><a href="#video" class="menu-link">Відеоогляд</a></li>
+							<li><a href="#testimonials" class="menu-link">Відгуки</a></li>
+							<li><a href="#media" class="menu-link">Відео</a></li>
+							<li><a href="#gallery" class="menu-link">Галерея</a></li>
+							<li><a href="#faqs" class="menu-link">Запитання й відповіді</a></li>
+						</ul>
+					</section>
+					<section class="px-2 py-2" aria-labelledby="menu-about">
+						<p id="menu-about" class="px-2 text-sm font-bold">Про нас</p>
+						<ul class="mt-1 flex flex-col">
+							<li><a href="#about" class="menu-link">Наша історія</a></li>
+							<li><a href="#vet" class="menu-link">Наша команда</a></li>
+							<li><a href="#vet" class="menu-link">Вакансії</a></li>
+							<li><a href="#testimonials" class="menu-link">Преса</a></li>
+							<li><a href="#daily-updates" class="menu-link">Блог і новини</a></li>
+							<li><a href="#adapt" class="menu-link">Безкоштовне знайомство</a></li>
+							<li><a href="#daily-updates" class="menu-link">Деталі перебування</a></li>
+						</ul>
+					</section>
+					<section class="px-2 py-2" aria-labelledby="menu-documents">
+						<p id="menu-documents" class="px-2 text-sm font-bold">Документи та довідка</p>
+						<ul class="mt-1 flex flex-col">
+							<li><a href="#faqs" class="menu-link">Конфіденційність</a></li>
+							<li><a href="#faqs" class="menu-link">Умови перебування</a></li>
+							<li><a href="#faqs" class="menu-link">Файли cookie</a></li>
+							<li><a href="#home" class="menu-link">Мапа сайту</a></li>
+							<li><a href="#contact" class="menu-link">Контакти</a></li>
+						</ul>
+					</section>
+					<section class="rounded-card bg-brand-accent px-4 py-3" aria-labelledby="menu-social">
+						<p id="menu-social" class="px-2 text-sm font-bold">Ми в соцмережах</p>
+						<ul class="mt-1 flex flex-col">
+							<li><a href="#social" class="menu-link">Instagram</a></li>
+							<li><a href="#social" class="menu-link">Facebook</a></li>
+							<li><a href="#social" class="menu-link">TikTok</a></li>
+							<li><a href="#social" class="menu-link">YouTube</a></li>
+							<li><a href="#social" class="menu-link">LinkedIn</a></li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<script>
+const toggle = document.getElementById('nav-toggle'), panel = document.getElementById('site-nav');
+const setOpen = open => { toggle.setAttribute('aria-expanded', open); toggle.setAttribute('aria-label', `${open ? 'Закрити' : 'Відкрити'} меню`); panel.dataset.open = open; panel.setAttribute('aria-hidden', !open); panel.toggleAttribute('inert', !open); };
+toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+panel.addEventListener('click', event => { if (event.target.closest('a')) setOpen(false); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); } });
+</script>
+
+	<main>
+	<section class="hero" id="about" aria-labelledby="hero-title">
+		<div class="hero-inner">
+			<div class="hero-copy text-white">
+				<h1 id="hero-title">Точний розрахунок проживання тварин у бутік-готелі без прихованих платежів</h1>
+				<p>Отримайте персональну калькуляцію з урахуванням ваги тварини, сезону, класу номера та доппослуг. Фіксуємо умови офіційним договором публічної оферти та даємо знижку -15% на другу тварину.</p>
+				<div class="button-row">
+					<a class="button button-soft text-ink font-bold transition-all duration-150 hover:bg-brand hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink" href="#calculator">Отримати точний розрахунок</a>
+					<a class="button border border-white/80 text-white transition-all duration-150 hover:bg-white/10 hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink" href="#pricing">Наші ціни</a>
+				</div>
+			</div>
+			<div class="hero-media">
+				<video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/images/hero_bg.svg">
+					<source src="assets/images/video_content2.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+	</section>
+
+	<section id="calculator" aria-labelledby="calc-title" class="bg-brand-soft px-4 py-12 font-sans text-ink sm:px-6 sm:py-16">
+		<div class="mx-auto max-w-container">
+			<header class="mb-8 max-w-2xl">
+				<p class="text-sm font-bold uppercase tracking-wide">Планування перебування</p>
+				<h2 id="calc-title" class="mt-2 text-3xl font-bold md:text-4xl">Розрахуйте вартість за 30 секунд</h2>
+				<p class="mt-3">Оберіть параметри перебування — калькулятор одразу покаже попередню вартість.</p>
+			</header>
+			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
+				<form id="price-calculator" novalidate class="grid gap-5 rounded-card bg-white p-4 shadow-sm sm:p-6">
+					<fieldset>
+						<legend class="mb-2 font-bold">Тварина</legend>
+						<div class="grid grid-cols-2 gap-3">
+							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card border border-ink/20 p-3 transition-colors hover:bg-brand-soft focus-within:ring-2 focus-within:ring-ink"><input type="radio" name="animal" value="cat" checked class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Кіт</span></label>
+							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card border border-ink/20 p-3 transition-colors hover:bg-brand-soft focus-within:ring-2 focus-within:ring-ink"><input type="radio" name="animal" value="dog" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Собака</span></label>
+						</div>
+					</fieldset>
+
+					<div id="dog-size-wrap" class="hidden">
+						<label for="dog-size" class="mb-2 block font-bold">Розмір собаки</label>
+						<select id="dog-size" name="dogSize" class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+							<option value="small">Дрібний</option>
+							<option value="medium" selected>Середній</option>
+							<option value="large">Великий</option>
+						</select>
+					</div>
+
+					<div>
+						<label for="pet-count" class="mb-2 block font-bold">Кількість тварин</label>
+						<select id="pet-count" name="petCount" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+							<option value="1">1 тварина</option><option value="2">2 тварини</option><option value="3">3 тварини</option>
+						</select>
+						<p id="pet-count-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+					</div>
+
+					<div>
+						<label for="room-type" class="mb-2 block font-bold">Номер</label>
+						<select id="room-type" name="roomType" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+							<option value="standard">Стандарт</option><option value="balcony">Балкон</option><option value="luxury">Люкс</option>
+						</select>
+						<p id="room-type-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+					</div>
+
+					<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+						<div>
+							<label for="arrival-date" class="mb-2 block font-bold">Дата заїзду</label>
+							<input id="arrival-date" name="arrival" type="date" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+							<p id="arrival-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+						</div>
+						<div>
+							<label for="departure-date" class="mb-2 block font-bold">Дата виїзду</label>
+							<input id="departure-date" name="departure" type="date" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+							<p id="departure-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+						</div>
+					</div>
+
+					<fieldset>
+						<legend class="mb-2 font-bold">Додаткові послуги</legend>
+						<div class="grid gap-1">
+							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card px-2 hover:bg-brand-soft"><input type="checkbox" name="services" value="walking" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Вигул</span></label>
+							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card px-2 hover:bg-brand-soft"><input type="checkbox" name="services" value="grooming" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Грумінг</span></label>
+							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card px-2 hover:bg-brand-soft"><input type="checkbox" name="services" value="photo" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Фотозвіт</span></label>
+						</div>
+					</fieldset>
+				</form>
+
+				<aside class="rounded-card bg-white p-5 shadow-sm sm:p-6" aria-labelledby="calc-result-title">
+					<h3 id="calc-result-title" class="text-2xl font-bold">Попередній розрахунок</h3>
+					<div id="calc-result" aria-live="polite" aria-atomic="true" class="mt-4">
+						<dl class="grid gap-2 text-sm sm:text-base">
+							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>База</dt><dd data-calc-value="base">—</dd></div>
+							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Номер</dt><dd data-calc-value="room">—</dd></div>
+							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Сезонна надбавка</dt><dd data-calc-value="season">—</dd></div>
+							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Додаткові послуги</dt><dd data-calc-value="services">—</dd></div>
+							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Знижка за кількість тварин</dt><dd data-calc-value="multi-discount">—</dd></div>
+							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Знижка за тривалість</dt><dd data-calc-value="duration-discount">—</dd></div>
+							<div class="flex justify-between gap-4 py-2 text-lg font-extrabold"><dt>РАЗОМ</dt><dd data-calc-value="total">Вкажіть дати</dd></div>
+						</dl>
+						<p id="calc-status" class="mt-2 text-sm text-ink" role="status">Вкажіть дати заїзду та виїзду для розрахунку.</p>
+					</div>
+					<div class="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+						<a id="email-request" href="#calculator" aria-disabled="true" class="inline-flex min-h-11 items-center justify-center rounded-card bg-ink px-5 py-3 text-center font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none aria-disabled:hover:bg-ink aria-disabled:hover:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 aria-disabled:cursor-not-allowed aria-disabled:opacity-50">Надіслати розрахунок на email</a>
+						<a href="#contact" class="inline-flex min-h-11 items-center justify-center rounded-card border border-ink px-5 py-3 text-center font-semibold transition-all duration-150 hover:bg-brand-soft hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Залишити заявку</a>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</section>
+
+	<section class="benefits block bg-brand-soft" id="benefits" aria-labelledby="benefits-title">
+		<header class="section-heading">
+			<h2 id="benefits-title">Чому «Його Хвостатість»?</h2>
+			<p>Ми знаємо цей стрес: ви шукаєте готель для улюбленця і бачите лише розмиті «ціни від...», а після заїзду виявляються доплати за вагу, ліки чи сезонність. Додайте до цього страх клінічних боксів — і поїздка перетворюється на тривогу.</p>
+		</header>
+		<div class="benefit-grid mx-auto grid max-w-container grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			<article id="daily-updates" class="benefit-card overflow-hidden rounded-card bg-white text-ink shadow-sm">
+				<img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Собака під час щоденного фотозвіту" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+				<div class="grid gap-3 p-5">
+					<h3 class="text-xl font-bold">Ми створили «Його Хвостатість», щоб повернути вам спокій.</h3>
+					<p>У нас немає кліток чи вольєрів — лише затишні номери, ветеринарний нагляд та щоденні фотозвіти.</p>
+					<a class="text-link" href="#process">Як це працює <span aria-hidden="true">›</span></a>
+				</div>
+			</article>
+			<article id="vet" class="benefit-card overflow-hidden rounded-card bg-white text-ink shadow-sm">
+				<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Французький бульдог у жовтій кофті" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+				<div class="grid gap-3 p-5">
+					<p class="eyebrow">Чесний калькулятор</p>
+					<h3 class="text-xl font-bold">100% визначеність ще до бронювання</h3>
+					<p>За 30 секунд ви вказуєте дати, вагу тварини й потрібні послуги — та отримуєте прозорий розрахунок без жодного прихованого платежу, із можливістю відправити деталі в один тап.</p>
+					<ul class="grid gap-2 text-sm">
+						<li>Вага тварини, сезон і клас номера</li>
+						<li>Потрібні додаткові послуги</li>
+						<li>Прозорий розрахунок без прихованих платежів</li>
+					</ul>
+				</div>
+			</article>
+			<article id="adapt" class="benefit-card overflow-hidden rounded-card bg-white text-ink shadow-sm">
+				<img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Собака знайомиться з новим місцем" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+				<div class="grid gap-3 p-5">
+					<p class="eyebrow">Прозорість та визначеність</p>
+					<h3 class="text-xl font-bold">Ніякої цінової невизначеності.</h3>
+					<p>Фіксуємо умови офіційним договором публічної оферти та даємо знижку -15% на другу тварину.</p>
+					<ul class="grid gap-2 text-sm">
+						<li>Офіційний договір публічної оферти</li>
+						<li>Чіткий чек</li>
+						<li>Повна безпека для вашого хвостика</li>
+					</ul>
+					<a class="text-link" href="#calculator">Отримати точний розрахунок <span aria-hidden="true">›</span></a>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section id="suites" aria-labelledby="suites-title" class="bg-white py-12 text-ink sm:py-16">
+  <div class="mx-auto max-w-container px-4 sm:px-6">
+
+    <header class="mb-8 max-w-2xl sm:mb-12">
+      <h2 id="suites-title" class="text-3xl font-bold md:text-4xl">Затишний номер для кожного улюбленця</h2>
+      <p class="mt-3 text-base">У кожному номері — комфортне місце для відпочинку, м’яке світло й достатньо простору для собаки чи кота.</p>
+    </header>
+
+    <ul class="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <li class="flex">
+        <article class="flex w-full flex-col gap-4 rounded-card border border-ink/10 bg-white p-4 text-ink shadow-sm transition duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg has-[:focus-visible]:-translate-y-1 has-[:focus-visible]:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[:focus-visible]:translate-y-0">
+          <div class="aspect-[4/3] overflow-hidden rounded-card">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Золотистий собака крупним планом" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover">
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Стандарт</h3>
+            <p class="text-sm">Комфортний номер із м’яким лежаком і краєвидом із вікна — для спокійного відпочинку вашого улюбленця.</p>
+          </div>
+          <ul class="flex flex-wrap gap-2">
+            <li class="inline-flex items-center rounded-card bg-brand-soft px-3 py-1 text-xs font-semibold"><span class="sr-only">Площа:&nbsp;</span>6 м²</li>
+            <li class="inline-flex items-center rounded-card bg-brand px-3 py-1 text-xs font-semibold">від 600 грн / доба</li>
+          </ul>
+          <a href="#calculator" aria-label="Забронювати номер «Стандарт»" class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-card bg-ink px-6 py-3 text-base font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Забронювати</a>
+        </article>
+      </li>
+
+      <li class="flex">
+        <article class="flex w-full flex-col gap-4 rounded-card border border-ink/10 bg-white p-4 text-ink shadow-sm transition duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg has-[:focus-visible]:-translate-y-1 has-[:focus-visible]:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[:focus-visible]:translate-y-0">
+          <div class="aspect-[4/3] overflow-hidden rounded-card">
+            <img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Собака солодко спить у м’якому лежаку" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover">
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Балкон</h3>
+            <p class="text-sm">Свій балкон, свіже повітря та м’який лежак для відпочинку собаки чи кота.</p>
+          </div>
+          <ul class="flex flex-wrap gap-2">
+            <li class="inline-flex items-center rounded-card bg-brand-soft px-3 py-1 text-xs font-semibold"><span class="sr-only">Площа:&nbsp;</span>8 м²</li>
+            <li class="inline-flex items-center rounded-card bg-brand px-3 py-1 text-xs font-semibold">від 800 грн / доба</li>
+          </ul>
+          <a href="#calculator" aria-label="Забронювати номер «Балкон»" class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-card bg-ink px-6 py-3 text-base font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Забронювати</a>
+        </article>
+      </li>
+
+      <li class="flex">
+        <article class="flex w-full flex-col gap-4 rounded-card border border-ink/10 bg-white p-4 text-ink shadow-sm transition duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg has-[:focus-visible]:-translate-y-1 has-[:focus-visible]:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[:focus-visible]:translate-y-0">
+          <div class="aspect-[4/3] overflow-hidden rounded-card">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Пес радісно гуляє з опікуном" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover">
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Люкс</h3>
+            <p class="text-sm">Просторий номер з ортопедичним лежаком і м’яким світлом — максимум комфорту для найвибагливіших гостей.</p>
+          </div>
+          <ul class="flex flex-wrap gap-2">
+            <li class="inline-flex items-center rounded-card bg-brand-soft px-3 py-1 text-xs font-semibold"><span class="sr-only">Площа:&nbsp;</span>12 м²</li>
+            <li class="inline-flex items-center rounded-card bg-brand px-3 py-1 text-xs font-semibold">від 1&nbsp;200 грн / доба</li>
+          </ul>
+          <a href="#calculator" aria-label="Забронювати номер «Люкс»" class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-card bg-ink px-6 py-3 text-base font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Забронювати</a>
+        </article>
+      </li>
+
+      <li class="flex">
+        <article class="flex w-full flex-col gap-4 rounded-card border border-ink/10 bg-white p-4 text-ink shadow-sm transition duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg has-[:focus-visible]:-translate-y-1 has-[:focus-visible]:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[:focus-visible]:translate-y-0">
+          <div class="aspect-[4/3] overflow-hidden rounded-card">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Маленький собака відпочиває в номері" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover">
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Для котів</h3>
+            <p class="text-sm">Тиха кімната з вертикальними полицями, дряпкою та сховком, де кіт почувається в безпеці.</p>
+          </div>
+          <ul class="flex flex-wrap gap-2">
+            <li class="inline-flex items-center rounded-card bg-brand-soft px-3 py-1 text-xs font-semibold"><span class="sr-only">Площа:&nbsp;</span>5 м²</li>
+            <li class="inline-flex items-center rounded-card bg-brand px-3 py-1 text-xs font-semibold">від 500 грн / доба</li>
+          </ul>
+          <a href="#calculator" aria-label="Забронювати номер «Для котів»" class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-card bg-ink px-6 py-3 text-base font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Забронювати</a>
+        </article>
+      </li>
+
+      <li class="flex">
+        <article class="flex w-full flex-col gap-4 rounded-card border border-ink/10 bg-white p-4 text-ink shadow-sm transition duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg has-[:focus-visible]:-translate-y-1 has-[:focus-visible]:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[:focus-visible]:translate-y-0">
+          <div class="aspect-[4/3] overflow-hidden rounded-card">
+            <img src="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Пес грається з м’якими іграшками" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover">
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Для сеніорів</h3>
+            <p class="text-sm">Спокійний номер без порогів, із низьким лежаком і посиленою увагою команди до старших улюбленців.</p>
+          </div>
+          <ul class="flex flex-wrap gap-2">
+            <li class="inline-flex items-center rounded-card bg-brand-soft px-3 py-1 text-xs font-semibold"><span class="sr-only">Площа:&nbsp;</span>7 м²</li>
+            <li class="inline-flex items-center rounded-card bg-brand px-3 py-1 text-xs font-semibold">від 700 грн / доба</li>
+          </ul>
+          <a href="#calculator" aria-label="Забронювати номер «Для сеніорів»" class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-card bg-ink px-6 py-3 text-base font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Забронювати</a>
+        </article>
+      </li>
+
+      <li class="flex">
+        <article class="flex w-full flex-col gap-4 rounded-card border border-ink/10 bg-white p-4 text-ink shadow-sm transition duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg has-[:focus-visible]:-translate-y-1 has-[:focus-visible]:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:has-[:focus-visible]:translate-y-0">
+          <div class="aspect-[4/3] overflow-hidden rounded-card">
+            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Собаки відпочивають разом після гри" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover">
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Сімейний</h3>
+            <p class="text-sm">Один просторий номер для двох улюбленців, які звикли відпочивати разом.</p>
+          </div>
+          <ul class="flex flex-wrap gap-2">
+            <li class="inline-flex items-center rounded-card bg-brand-soft px-3 py-1 text-xs font-semibold"><span class="sr-only">Площа:&nbsp;</span>14 м²</li>
+            <li class="inline-flex items-center rounded-card bg-brand px-3 py-1 text-xs font-semibold">від 1&nbsp;000 грн / доба</li>
+          </ul>
+          <a href="#calculator" aria-label="Забронювати номер «Сімейний»" class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-card bg-ink px-6 py-3 text-base font-semibold text-white transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Забронювати</a>
+        </article>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+	<section class="process block" id="process" aria-labelledby="process-title">
+		<div class="section-heading">
+			<p class="eyebrow">Як усе відбувається</p>
+			<h2 id="process-title">Чотири прості кроки</h2>
+			<p>Від першого знайомства до щасливого повернення додому.</p>
+		</div>
+		<div class="step-grid">
+			<article class="step-card"><div class="step-icon" aria-hidden="true">⬡</div><h3>Оберіть дати онлайн</h3><p>Знайдіть зручний час і забронюйте номер за кілька хвилин.</p><a href="#calculator">Забронювати <span aria-hidden="true">›</span></a></article>
+			<article class="step-card"><div class="step-icon" aria-hidden="true">⬡</div><h3>Завітайте на знайомство</h3><p>Безкоштовний адаптаційний візит перед першим перебуванням.</p><a href="#calculator">Запланувати візит <span aria-hidden="true">›</span></a></article>
+			<article class="step-card"><div class="step-icon" aria-hidden="true">⬡</div><h3>Насолоджуйтеся відпочинком</h3><p>Ігри, фото, турбота команди та затишний номер щоночі.</p><a href="#daily-updates">Деталі перебування <span aria-hidden="true">›</span></a></article>
+			<article class="step-card"><div class="step-icon" aria-hidden="true">⬡</div><h3>Зустріньте щасливого друга</h3><p>Відпочилий і задоволений улюбленець знову поруч із вами.</p><a href="#contact">Зв’язатися з нами <span aria-hidden="true">›</span></a></article>
+		</div>
+	</section>
+
+	<section id="video" aria-labelledby="video-title" class="block bg-brand-soft font-sans text-ink">
+		<div class="section-heading">
+			<h2 id="video-title">Відеоогляд готелю</h2>
+		</div>
+		<figure class="mx-auto max-w-container">
+			<div class="video-frame aspect-video w-full mx-auto shadow-video overflow-hidden">
+				<iframe class="aspect-video h-full w-full" src="https://www.youtube.com/embed/ayLc20Ihkp4?si=qpN8uFuIEmMl-giI" title="Відеоогляд готелю «Його Хвостатість»" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+			</div>
+			<figcaption class="mt-3 text-center text-sm">Знайомство з простором, де собаки й коти відпочивають із турботою.</figcaption>
+		</figure>
+	</section>
+
+	<section class="media block bg-brand-soft" id="media" aria-labelledby="media-title">
+		<div class="section-heading">
+			<h2 id="media-title">Зазирніть до «Його Хвостатості»</h2>
+			<p>Побачте, де відпочиватимуть і гратимуться ваші улюбленці.</p>
+		</div>
+		<div class="media-video-wrap mx-auto max-w-container overflow-hidden rounded-card shadow-video">
+			<img class="media-video block aspect-video w-full object-cover" src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Цуценя гуляє на заході сонця" loading="lazy" decoding="async">
+		</div>
+	</section>
+
+	<section class="gallery block" id="gallery" aria-labelledby="gallery-title">
+		<div class="section-heading"><h2 id="gallery-title">Галерея</h2><p>Наші гості, затишні номери та солодкий сон на сонці.</p></div>
+		<div class="gallery-grid">
+			<div class="image-frame"><img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собака солодко спить у м’якому лежаку" loading="lazy" decoding="async"></div>
+			<div class="image-frame"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес радісно гуляє з опікуном" loading="lazy" decoding="async"></div>
+			<div class="image-frame"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Маленький собака відпочиває в номері" loading="lazy" decoding="async"></div>
+			<div class="image-frame"><img src="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес грається з м’якими іграшками" loading="lazy" decoding="async"></div>
+			<div class="image-frame"><img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собаки відпочивають разом після гри" loading="lazy" decoding="async"></div>
+			<div class="image-frame"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Цуценя гуляє на заході сонця" loading="lazy" decoding="async"></div>
+		</div>
+	</section>
+
+	<section class="testimonials block" id="testimonials" aria-labelledby="testimonials-title">
+		<div class="section-heading"><h2 id="testimonials-title">Щасливі гості</h2><p>Враження людей, які довіряють нам своїх улюбленців.</p></div>
+		<div class="review-grid">
+			<article class="review-card"><h3 class="visually-hidden">Відгук Олени Петренко</h3><div class="stars" role="img" aria-label="5 з 5 зірок">★★★★★</div><p>«Бублик побіг усередину, навіть не озирнувшись. Такого ще не було!»</p><div class="review-author"><span aria-hidden="true">👩🏻</span><div><strong>Олена Петренко</strong><small>Власниця Бублика</small></div></div></article>
+			<article class="review-card"><h3 class="visually-hidden">Відгук Марка Джонсона</h3><div class="stars" role="img" aria-label="5 з 5 зірок">★★★★★</div><p>«Щоденні фото допомогли мені спокійно пережити довгу подорож».</p><div class="review-author"><span aria-hidden="true">👨🏻</span><div><strong>Марк Джонсон</strong><small>Власник Рекса</small></div></div></article>
+			<article class="review-card"><h3 class="visually-hidden">Відгук Ірини Шевченко</h3><div class="stars" role="img" aria-label="5 з 5 зірок">★★★★★</div><p>«Ветеринар вчасно помітив запалення вушка — ми уникнули зайвої поїздки».</p><div class="review-author"><span aria-hidden="true">👩🏼</span><div><strong>Ірина Шевченко</strong><small>Власниця Луни</small></div></div></article>
+		</div>
+	</section>
+
+	<section class="faqs block" id="faqs" aria-labelledby="faqs-title">
+		<div class="section-heading"><h2 id="faqs-title">Часті запитання</h2><p>Відповіді про щеплення, харчування та щоденний розпорядок у «Його Хвостатості».</p></div>
+		<div class="faq-list">
+			<article class="faq-item"><h3>Які щеплення потрібні?</h3><p>Усі гості мають мати чинні щеплення від сказу, чуми м’ясоїдних і парвовірусу. Будь ласка, візьміть підтвердження від ветеринара на заселення.</p></article>
+			<article class="faq-item"><h3>Чи можете ви годувати мого улюбленця?</h3><p>Так. Привезіть звичний корм для собаки чи кота, і ми дотримуватимемося вашого графіка. За потреби запропонуємо відповідний раціон.</p></article>
+			<article class="faq-item"><h3>Який розпорядок дня?</h3><p>Прогулянки та ігри відбуваються вранці й по обіді. Після обіду — час на відпочинок, а вечеря подається в номері.</p></article>
+			<article class="faq-item"><h3>Чи приймаєте ви собак і котів?</h3><p>Так, ми раді гостям різних порід і розмірів. Перед першим перебуванням кожен улюбленець проходить безкоштовний адаптаційний візит.</p></article>
+			<article class="faq-item"><h3>Що, якщо моєму улюбленцю потрібні ліки?</h3><p>Навчена команда дає призначені препарати без додаткової оплати. Ветеринар контролює графік, а ми повідомляємо вам про догляд.</p></article>
+		</div>
+		<div class="faq-contact"><h3>Залишилися запитання?</h3><p>Напишіть нам — відповімо протягом дня.</p><a class="button button-light transition-all duration-150 hover:bg-brand hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2" href="#contact">Написати нам</a></div>
+	</section>
+
+	<section class="cta block bg-brand-soft text-ink" id="pricing" aria-labelledby="pricing-title">
+		<div class="cta-inner mx-auto grid max-w-container grid-cols-1 items-center gap-8 lg:grid-cols-2">
+			<div class="cta-copy">
+				<p class="eyebrow">Прозора вартість</p>
+				<h2 id="pricing-title">Ціна, яку ви бачите — це ціна, яку сплачуєте</h2>
+				<p>Жодних несподіваних доплат за ліки, ігри чи пізній виїзд. Розрахуйте попередню вартість за датами й послугами.</p>
+				<div class="button-row">
+					<a class="button button-dark transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2" href="#calculator">Розрахувати вартість</a>
+					<a class="text-link" href="#contact">Поставити запитання <span aria-hidden="true">›</span></a>
+				</div>
+			</div>
+			<div class="image-frame cta-image rounded-card">
+				<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Двоє собак відпочивають разом" loading="lazy" decoding="async">
+			</div>
+		</div>
+	</section>
+
+	<section class="contact block" id="contact" aria-labelledby="contact-title">
+		<div class="contact-inner">
+			<div class="contact-copy">
+				<p class="eyebrow">Зворотний зв’язок</p>
+				<h2 id="contact-title">Зв’яжіться з нами</h2>
+				<p>Запитайте про вільні дати, ознайомчий візит або будь-що, що вас цікавить.</p>
+				<form id="contact-form" class="contact-form">
+					<div class="form-field"><label for="name">Ім’я</label><input id="name" name="name" type="text" placeholder="Ваше ім’я" autocomplete="name" required></div>
+					<div class="form-field"><label for="email">Електронна пошта</label><input id="email" name="email" type="email" placeholder="Ваша адреса" autocomplete="email" required></div>
+					<div class="form-field"><label for="message">Повідомлення</label><textarea id="message" name="message" rows="5" placeholder="Напишіть ваше повідомлення…" required></textarea></div>
+					<div class="consent-field"><input id="consent" name="consent" type="checkbox" required><label for="consent">Погоджуюся, щоб зі мною зв’язалися щодо запиту.</label></div>
+					<button class="button button-dark transition-all duration-150 hover:bg-ink-hover hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2" type="submit">Надіслати повідомлення</button>
+					<p id="contact-status" role="status" aria-live="polite"></p>
+				</form>
+			</div>
+			<aside class="contact-details grid gap-5" aria-label="Контактна інформація та розташування">
+				<div class="contact-info rounded-card bg-white p-5 text-ink">
+					<h3 class="text-xl font-bold">Контактна інформація</h3>
+					<address class="mt-3 grid gap-2 not-italic">
+						<p>м. Львів, вул. Прикладна, 1</p>
+						<a href="tel:+380321234567">+380 32 123 45 67</a>
+						<a href="mailto:histailfullnes@gmail.com">histailfullnes@gmail.com</a>
+					</address>
+				</div>
+				<div class="contact-map rounded-card bg-white p-2">
+					<h3 class="px-3 pt-2 text-lg font-bold text-ink">Розташування</h3>
+					<p class="px-3 pt-1 text-sm text-ink">Адреса на карті — плейсхолдер, її буде замінено на фактичну адресу готелю.</p>
+					<iframe class="mt-2 aspect-video w-full rounded-card border-0" title="Карта Львова, Україна" src="https://www.google.com/maps?q=%D0%9B%D1%8C%D0%B2%D1%96%D0%B2&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+				<aside aria-label="Погода у Львові" class="min-h-[250px] overflow-hidden rounded-card bg-white p-4 text-ink">
+					<div class="sin-informer sin-informer_font-Arial sin-informer_theme-light" data-lang="uk">
+						<div class="sin-informer__header">
+							<a class="sin-informer__logo-link" href="https://sinoptik.ua" target="_blank" rel="nofollow noopener noreferrer">
+								<img class="sin-informer__logo-image" width="66" height="20" srcset="https://sinoptik.ua/resources/informer/assets/icons/logo.png, https://sinoptik.ua/resources/informer/assets/icons/logo2x.png 2x" src="https://sinoptik.ua/resources/informer/assets/icons/logo.png" alt="Sinoptik">
+							</a>
+							<p class="sin-informer__date">Погода на найближчий час</p>
+							<p class="sin-informer__time" data-format="24"><span class="sin-informer__time-icon"></span></p>
+						</div>
+						<div class="sin-informer__main sin-informer__main_inline">
+							<a class="sin-informer__entry" href="https://sinoptik.ua/pohoda/lviv" target="_blank" rel="nofollow noopener noreferrer">
+								<p class="sin-informer__location">Львів</p>
+								<div class="sin-informer__primary" style="display: none">
+									<p class="sin-informer__local-time"></p>
+									<p class="sin-informer__temp" data-unit="c"></p>
+									<div class="sin-informer__condition" data-icon-path="https://sinoptik.ua/resources/informer/assets/icons/conditions"></div>
+								</div>
+								<div class="sin-informer__secondary" style="display: none">
+									<p class="sin-informer__marker sin-informer__marker_wind" data-unit="ms" data-suffix="м/с" data-directions="Західний,Північно-Західний,Північний,Північно-Східний,Східний,Південно-Східний,Південний,Південно-Західний,Штиль" title="Вітер"><span class="sin-informer__marker-icon"></span></p>
+									<p class="sin-informer__marker sin-informer__marker_humidity" title="Вологість"><span class="sin-informer__marker-icon"></span></p>
+									<p class="sin-informer__marker sin-informer__marker_pressure" data-unit="mm-hg" data-suffix="мм" title="Тиск"><span class="sin-informer__marker-icon"></span></p>
+								</div>
+							</a>
+						</div>
+						<div class="sin-informer__footer">Погода на 10 днів від <a class="sin-informer__domain-link" href="https://sinoptik.ua/pohoda/lviv/10-dniv" target="_blank" rel="nofollow noopener noreferrer">sinoptik.ua</a></div>
+					</div>
+				</aside>
+			</aside>
+		</div>
+	</section>
+	</main>
+
+	<footer id="footer" class="bg-brand-deep font-sans text-ink">
+		<div class="mx-auto grid w-full max-w-container grid-cols-1 gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+			<section aria-labelledby="footer-brand-title">
+				<a href="#home" class="inline-flex min-h-11 items-center rounded-card transition-opacity duration-150 hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+					<img src="assets/images/logo.svg" alt="Його Хвостатість" class="logo-outline h-auto w-[130px]">
+				</a>
+				<h2 id="footer-brand-title" class="mt-4 text-lg font-bold">Його Хвостатість</h2>
+				<p class="mt-2 max-w-sm text-sm leading-6">Преміальний готель, де собаки й коти відпочивають із турботою, увагою та відчуттям дому.</p>
+			</section>
+
+			<nav aria-labelledby="footer-navigation-title">
+				<h2 id="footer-navigation-title" class="text-base font-bold">Навігація</h2>
+				<ul class="mt-3 flex flex-col">
+					<li><a href="#home" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Головна</a></li>
+					<li><a href="#pricing" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Ціни</a></li>
+					<li><a href="#suites" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Номери</a></li>
+					<li><a href="#about" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Про нас</a></li>
+					<li><a href="#contact" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Контакти</a></li>
+				</ul>
+			</nav>
+
+			<nav aria-labelledby="footer-useful-title">
+				<h2 id="footer-useful-title" class="text-base font-bold">Корисні посилання</h2>
+				<ul class="mt-3 flex flex-col">
+					<li><a href="#calculator" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Забронювати</a></li>
+					<li><a href="#faqs" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Запитання й відповіді</a></li>
+					<li><a href="#gallery" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Галерея</a></li>
+					<li><a href="#testimonials" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Відгуки</a></li>
+					<li><a href="#process" class="flex min-h-11 items-center rounded-card px-2 text-sm transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Як це працює</a></li>
+				</ul>
+			</nav>
+
+			<section aria-labelledby="footer-contact-title">
+				<h2 id="footer-contact-title" class="text-base font-bold">Контакти</h2>
+				<address class="mt-3 flex flex-col gap-2 text-sm not-italic">
+					<p>м. Львів, вул. Прикладна, 1</p>
+					<a href="tel:+380321234567" class="flex min-h-11 items-center rounded-card transition-colors duration-150 hover:text-ink/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">+380 32 123 45 67</a>
+					<a href="mailto:histailfullnes@gmail.com" class="flex min-h-11 items-center rounded-card transition-colors duration-150 hover:text-ink/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">histailfullnes@gmail.com</a>
+				</address>
+				<ul id="social" aria-label="Соціальні мережі" class="mt-3 flex flex-wrap gap-2">
+					<li><a href="https://www.instagram.com/" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-card transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+					<li><a href="https://www.facebook.com/" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-card transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.4 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.2V13H10v8h3.4Z"/></svg></a></li>
+					<li><a href="https://x.com/" aria-label="X" class="flex h-11 w-11 items-center justify-center rounded-card transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.3-8.4L1.9 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg></a></li>
+					<li><a href="https://www.linkedin.com/" aria-label="LinkedIn" class="flex h-11 w-11 items-center justify-center rounded-card transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.4 9h3.6v12H3.4V9Zm5.8 0h3.4v1.6h.1A3.7 3.7 0 0 1 16 8.7c3.7 0 4.4 2.4 4.4 5.5V21h-3.6v-6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.2V9Z"/></svg></a></li>
+					<li><a href="https://www.youtube.com/" aria-label="YouTube" class="flex h-11 w-11 items-center justify-center rounded-card transition-colors duration-150 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19.1 4.6 12 4.6 12 4.6s-7.1 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.8.5 8.9.5 8.9.5s7.1 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15.5v-7l6 3.5-6 3.5Z"/></svg></a></li>
+				</ul>
+			</section>
+		</div>
+
+		<div class="border-t border-white/20">
+			<div class="mx-auto flex w-full max-w-container flex-col gap-3 px-4 py-4 text-sm sm:px-6 md:flex-row md:items-center md:justify-between">
+				<p>© 2026 «Його Хвостатість». Усі права захищено.</p>
+				<nav aria-label="Юридична інформація" class="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:gap-x-4">
+					<a href="#faqs" class="flex min-h-11 items-center rounded-card transition-colors duration-150 hover:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Політика конфіденційності</a>
+					<a href="#faqs" class="flex min-h-11 items-center rounded-card transition-colors duration-150 hover:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Умови перебування</a>
+					<a href="#faqs" class="flex min-h-11 items-center rounded-card transition-colors duration-150 hover:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">Налаштування cookie</a>
+				</nav>
+			</div>
+		</div>
+	</footer>
+	<script src="https://sinoptik.ua/api/informer/content?loc=bwCOPQ6RBMAlPUoebrAObrFr&amp;cem=iKDRcObHcSjHBhD7cM=0cTYUcnHObMFrbSju2M2U2kj" defer></script>
+</body>
+</html>
