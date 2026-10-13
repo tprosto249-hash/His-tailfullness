@@ -1,0 +1,16 @@
+# Операційні системи
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+.directory
+
+# Редактори та IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js
+node_modules/
