@@ -27,6 +27,8 @@
     }
   }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/calculator.js" defer></script>
 <script src="js/contact-form.js" defer></script>
@@ -115,6 +117,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 		<div class="hero-inner">
 			<div class="hero-copy text-white">
 				<h1 id="hero-title">Точний розрахунок проживання тварин у бутік-готелі без прихованих платежів</h1>
+				<p class="hero-typed" aria-live="off"><span id="typed-text">Фотозвіти щодня.</span></p>
 				<p>Отримайте персональну калькуляцію з урахуванням ваги тварини, сезону, класу номера та доппослуг. Фіксуємо умови офіційним договором публічної оферти та даємо знижку -15% на другу тварину.</p>
 				<div class="button-row">
 					<a class="button button-soft text-ink font-bold transition-all duration-150 hover:bg-brand hover:shadow-md hover:!transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink" href="#calculator">Отримати точний розрахунок</a>
@@ -416,21 +419,29 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 	<section class="gallery block" id="gallery" aria-labelledby="gallery-title">
 		<div class="section-heading"><h2 id="gallery-title">Галерея</h2><p>Наші гості, затишні номери та солодкий сон на сонці.</p></div>
 		<div class="gallery-grid">
-			<div class="image-frame"><img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собака солодко спить у м’якому лежаку" loading="lazy" decoding="async"></div>
-			<div class="image-frame"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес радісно гуляє з опікуном" loading="lazy" decoding="async"></div>
-			<div class="image-frame"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Маленький собака відпочиває в номері" loading="lazy" decoding="async"></div>
-			<div class="image-frame"><img src="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес грається з м’якими іграшками" loading="lazy" decoding="async"></div>
-			<div class="image-frame"><img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собаки відпочивають разом після гри" loading="lazy" decoding="async"></div>
-			<div class="image-frame"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Цуценя гуляє на заході сонця" loading="lazy" decoding="async"></div>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Собака солодко спить у м’якому лежаку" aria-label="Переглянути фото: собака солодко спить у м’якому лежаку"><div class="image-frame"><img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собака солодко спить у м’якому лежаку" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Пес радісно гуляє з опікуном" aria-label="Переглянути фото: пес радісно гуляє з опікуном"><div class="image-frame"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес радісно гуляє з опікуном" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Маленький собака відпочиває в номері" aria-label="Переглянути фото: маленький собака відпочиває в номері"><div class="image-frame"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Маленький собака відпочиває в номері" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Пес грається з м’якими іграшками" aria-label="Переглянути фото: пес грається з м’якими іграшками"><div class="image-frame"><img src="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес грається з м’якими іграшками" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Собаки відпочивають разом після гри" aria-label="Переглянути фото: собаки відпочивають разом після гри"><div class="image-frame"><img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собаки відпочивають разом після гри" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Цуценя гуляє на заході сонця" aria-label="Переглянути фото: цуценя гуляє на заході сонця"><div class="image-frame"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Цуценя гуляє на заході сонця" loading="lazy" decoding="async"></div></a>
 		</div>
 	</section>
 
 	<section class="testimonials block" id="testimonials" aria-labelledby="testimonials-title">
-		<div class="section-heading"><h2 id="testimonials-title">Щасливі гості</h2><p>Враження людей, які довіряють нам своїх улюбленців.</p></div>
-		<div class="review-grid">
-			<article class="review-card"><h3 class="visually-hidden">Відгук Олени Петренко</h3><div class="stars" role="img" aria-label="5 з 5 зірок">★★★★★</div><p>«Бублик побіг усередину, навіть не озирнувшись. Такого ще не було!»</p><div class="review-author"><span aria-hidden="true">👩🏻</span><div><strong>Олена Петренко</strong><small>Власниця Бублика</small></div></div></article>
-			<article class="review-card"><h3 class="visually-hidden">Відгук Марка Джонсона</h3><div class="stars" role="img" aria-label="5 з 5 зірок">★★★★★</div><p>«Щоденні фото допомогли мені спокійно пережити довгу подорож».</p><div class="review-author"><span aria-hidden="true">👨🏻</span><div><strong>Марк Джонсон</strong><small>Власник Рекса</small></div></div></article>
-			<article class="review-card"><h3 class="visually-hidden">Відгук Ірини Шевченко</h3><div class="stars" role="img" aria-label="5 з 5 зірок">★★★★★</div><p>«Ветеринар вчасно помітив запалення вушка — ми уникнули зайвої поїздки».</p><div class="review-author"><span aria-hidden="true">👩🏼</span><div><strong>Ірина Шевченко</strong><small>Власниця Луни</small></div></div></article>
+		<div class="section-heading"><h2 id="testimonials-title">Щасливі гості</h2><p>Демонстраційні відгуки: тексти вигадані для прикладу й не належать реальним клієнтам.</p></div>
+		<div class="swiper reviews-swiper" aria-label="Відгуки клієнтів">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><figure class="review-card"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><blockquote><p>Фото-звіти приходили так, що я бачила, як мій кіт поступово звикає до нового місця. Їхала у відрядження й була по-справжньому спокійна.</p></blockquote><figcaption class="review-author"><span aria-hidden="true">ОК</span><div><strong>Олена К.</strong><small>Кіт</small></div></figcaption></figure></div>
+				<div class="swiper-slide"><figure class="review-card"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><blockquote><p>Ветеринар оглянув пса під час заселення й пояснив, на що звернути увагу. Це дало мені впевненість залишити його без зайвих хвилювань.</p></blockquote><figcaption class="review-author"><span aria-hidden="true">АМ</span><div><strong>Андрій М.</strong><small>Собака</small></div></figcaption></figure></div>
+				<div class="swiper-slide"><figure class="review-card"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><blockquote><p>Мій обережний кіт не сидів у клітці, а звикав до простору в своєму темпі. Фото-звіти показали, що він почувається як удома.</p></blockquote><figcaption class="review-author"><span aria-hidden="true">ІЛ</span><div><strong>Ірина Л.</strong><small>Кіт</small></div></figcaption></figure></div>
+				<div class="swiper-slide"><figure class="review-card"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><blockquote><p>Коли в собаки змінився апетит, ветеринар одразу вийшов на зв’язок і спокійно все пояснив. Я знав, що за ним уважно стежать.</p></blockquote><figcaption class="review-author"><span aria-hidden="true">ТБ</span><div><strong>Тарас Б.</strong><small>Собака</small></div></figcaption></figure></div>
+				<div class="swiper-slide"><figure class="review-card"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><blockquote><p>На кожному фото-звіті я бачила щасливу мордочку, а не стрес. Нарешті відпустка без постійних думок про улюбленця.</p></blockquote><figcaption class="review-author"><span aria-hidden="true">НГ</span><div><strong>Наталія Г.</strong><small>Собака</small></div></figcaption></figure></div>
+				<div class="swiper-slide"><figure class="review-card"><div class="stars" role="img" aria-label="Оцінка 5 з 5">★★★★★</div><blockquote><p>Персонал пише подробиці: що їв кіт, як грався, з ким подружився. А ветеринарний нагляд додає ще більше спокою.</p></blockquote><figcaption class="review-author"><span aria-hidden="true">ЮС</span><div><strong>Юрій С.</strong><small>Кіт</small></div></figcaption></figure></div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<button type="button" class="swiper-button-prev" aria-label="Попередній відгук"></button>
+			<button type="button" class="swiper-button-next" aria-label="Наступний відгук"></button>
 		</div>
 	</section>
 
@@ -617,5 +628,9 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 		</div>
 	</div>
 	<script src="https://sinoptik.ua/api/informer/content?loc=bwCOPQ6RBMAlPUoebrAObrFr&amp;cem=iKDRcObHcSjHBhD7cM=0cTYUcnHObMFrbSju2M2U2kj" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	<script src="js/main.js" defer></script>
 </body>
 </html>

@@ -449,7 +449,7 @@ h3 {
 }
 
 .testimonials {
-  background: var(--color-surface-muted);
+  background: var(--color-primary-soft);
 }
 
 .faqs {
@@ -490,6 +490,36 @@ h3 {
 .gallery-grid .image-frame {
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-card);
+}
+
+.gallery-link {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.gallery-link img {
+  transition: transform 300ms ease, filter 300ms ease;
+}
+
+.gallery-link:hover img {
+  filter: brightness(0.95);
+  transform: scale(1.05);
+}
+
+.gallery-link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-link img {
+    transition: none;
+  }
+
+  .gallery-link:hover img {
+    transform: none;
+  }
 }
 
 .review-grid {
@@ -537,6 +567,130 @@ h3 {
 
 .review-author small {
   font-weight: var(--font-weight-regular);
+}
+
+.reviews-swiper {
+  width: min(var(--container-width), var(--size-full));
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  --swiper-theme-color: var(--color-primary-accent);
+  --swiper-pagination-bullet-inactive-color: var(--color-text);
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-size: 10px;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+}
+
+.reviews-swiper .swiper-slide {
+  height: auto;
+}
+
+.reviews-swiper .review-card {
+  height: 100%;
+  padding: var(--space-6);
+  border: 1px solid rgb(244 161 99 / 30%);
+  background: var(--color-surface);
+}
+
+.reviews-swiper .stars {
+  color: var(--color-primary-accent);
+}
+
+.reviews-swiper blockquote {
+  flex: 1;
+  margin: 0;
+}
+
+.reviews-swiper blockquote p {
+  min-height: var(--space-12);
+  margin: 0;
+  font-size: var(--font-size-xs);
+}
+
+.reviews-swiper .review-author > span {
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.reviews-swiper .swiper-pagination {
+  bottom: 1.0625rem;
+  pointer-events: none;
+}
+
+.reviews-swiper .swiper-pagination-bullet {
+  pointer-events: auto;
+}
+
+.reviews-swiper .swiper-button-prev,
+.reviews-swiper .swiper-button-next {
+  top: auto;
+  bottom: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: 0;
+  border: 1px solid rgb(244 161 99 / 45%);
+  border-radius: 50%;
+  background: var(--color-surface);
+}
+
+.reviews-swiper .swiper-button-prev {
+  right: auto;
+  left: calc(50% - 7.5rem);
+}
+
+.reviews-swiper .swiper-button-next {
+  right: calc(50% - 7.5rem);
+  left: auto;
+}
+
+.reviews-swiper .swiper-button-prev::after,
+.reviews-swiper .swiper-button-next::after,
+.reviews-swiper .swiper-navigation-icon {
+  display: none;
+}
+
+.reviews-swiper .swiper-button-prev::before,
+.reviews-swiper .swiper-button-next::before {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.25rem;
+  content: "";
+}
+
+.reviews-swiper .swiper-button-prev::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f4a163' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E");
+}
+
+.reviews-swiper .swiper-button-next::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f4a163' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E");
+}
+
+.reviews-swiper .swiper-button-prev:focus-visible,
+.reviews-swiper .swiper-button-next:focus-visible,
+.reviews-swiper .swiper-pagination-bullet:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.hero-copy .hero-typed {
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-swiper .swiper-wrapper {
+    transition-duration: 0ms !important;
+  }
 }
 
 /* FAQ */

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Наш готель — Його Хвостатість</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Fancybox v5: стилі -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  <!-- Tailwind CSS 3 (CDN — для демо) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Nunito', 'system-ui', 'sans-serif'] } } }
+    };
+  </script>
+</head>
+
+<body class="bg-white font-sans text-[#111] antialiased">
+
+  <!--
+    ЗАМІНИ ПЛЕЙСХОЛДЕРИ IMAGE_URL_1 … IMAGE_URL_6 на свої адреси зображень
+    (і в href, і в src — це одна й та сама адреса).
+    Параметри ?w=500 / ?w=1600 працюють лише на сервісах зображень (Unsplash, Imgix тощо).
+    Для локальних файлів: у src постав мініатюру (assets/images/thumbs/...), в href — велике фото.
+  -->
+
+  <!-- ===================== ГАЛЕРЕЯ ===================== -->
+  <section id="gallery" aria-labelledby="gallery-title" class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+      <header class="max-w-2xl">
+        <h2 id="gallery-title" class="text-3xl font-extrabold leading-tight md:text-4xl">Наш готель</h2>
+        <p class="mt-3 text-[#111]/70">Натисніть на фото, щоб переглянути його у великому розмірі.</p>
+      </header>
+
+      <ul class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+
+        <li>
+          <a href="IMAGE_URL_1?w=1600"
+             data-fancybox="hotel-gallery"
+             data-caption="Світла кімната для котів із лежанками та драбинками"
+             class="group block overflow-hidden rounded-[10px] cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111]">
+            <img src="IMAGE_URL_1?w=500" width="500" height="375" loading="lazy"
+                 alt="Світла кімната для котів із лежанками та драбинками"
+                 class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-95 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+          </a>
+        </li>
+
+        <li>
+          <a href="IMAGE_URL_2?w=1600"
+             data-fancybox="hotel-gallery"
+             data-caption="Простора ігрова зона для собак"
+             class="group block overflow-hidden rounded-[10px] cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111]">
+            <img src="IMAGE_URL_2?w=500" width="500" height="375" loading="lazy"
+                 alt="Простора ігрова зона для собак"
+                 class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-95 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+          </a>
+        </li>
+
+        <li>
+          <a href="IMAGE_URL_3?w=1600"
+             data-fancybox="hotel-gallery"
+             data-caption="Затишна кімната для відпочинку без клітки"
+             class="group block overflow-hidden rounded-[10px] cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111]">
+            <img src="IMAGE_URL_3?w=500" width="500" height="375" loading="lazy"
+                 alt="Затишна кімната для відпочинку без клітки"
+                 class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-95 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+          </a>
+        </li>
+
+        <li>
+          <a href="IMAGE_URL_4?w=1600"
+             data-fancybox="hotel-gallery"
+             data-caption="Подвір'я для безпечних прогулянок"
+             class="group block overflow-hidden rounded-[10px] cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111]">
+            <img src="IMAGE_URL_4?w=500" width="500" height="375" loading="lazy"
+                 alt="Подвір'я для безпечних прогулянок"
+                 class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-95 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+          </a>
+        </li>
+
+        <li>
+          <a href="IMAGE_URL_5?w=1600"
+             data-fancybox="hotel-gallery"
+             data-caption="Зона відпочинку для собак і котів"
+             class="group block overflow-hidden rounded-[10px] cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111]">
+            <img src="IMAGE_URL_5?w=500" width="500" height="375" loading="lazy"
+                 alt="Зона відпочинку для собак і котів"
+                 class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-95 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+          </a>
+        </li>
+
+        <li>
+          <a href="IMAGE_URL_6?w=1600"
+             data-fancybox="hotel-gallery"
+             data-caption="Улюбленці під наглядом персоналу"
+             class="group block overflow-hidden rounded-[10px] cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111]">
+            <img src="IMAGE_URL_6?w=500" width="500" height="375" loading="lazy"
+                 alt="Улюбленці під наглядом персоналу"
+                 class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-95 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+  <!-- =================== /ГАЛЕРЕЯ =================== -->
+
+  <!-- Fancybox v5: скрипт -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof Fancybox === 'undefined') return;
+
+      Fancybox.bind("[data-fancybox='hotel-gallery']", {
+        Carousel: {
+          transition: 'fade'
+        },
+        Images: {
+          zoom: true,
+          Panzoom: {
+            maxScale: 3
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
