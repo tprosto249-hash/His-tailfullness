@@ -141,59 +141,60 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 			</header>
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
 				<form id="price-calculator" novalidate class="grid gap-5 rounded-card bg-white p-4 shadow-sm sm:p-6">
-					<fieldset>
+					<fieldset id="animal-group" class="rounded-card border border-transparent p-2" aria-describedby="animal-error">
 						<legend class="mb-2 font-bold">Тварина</legend>
 						<div class="grid grid-cols-2 gap-3">
-							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card border border-ink/20 p-3 transition-colors hover:bg-brand-soft focus-within:ring-2 focus-within:ring-ink"><input type="radio" name="animal" value="cat" checked class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Кіт</span></label>
-							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card border border-ink/20 p-3 transition-colors hover:bg-brand-soft focus-within:ring-2 focus-within:ring-ink"><input type="radio" name="animal" value="dog" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Собака</span></label>
+							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card border border-ink/20 p-3 transition-colors hover:bg-brand-soft focus-within:ring-2 focus-within:ring-ink"><input type="radio" name="animal" value="cat" checked required class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Кіт</span></label>
+							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card border border-ink/20 p-3 transition-colors hover:bg-brand-soft focus-within:ring-2 focus-within:ring-ink"><input type="radio" name="animal" value="dog" required class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Собака</span></label>
 						</div>
+						<p id="animal-error" class="mt-1 text-sm text-red-700" role="alert"></p>
 					</fieldset>
 
 					<div id="dog-size-wrap" class="hidden">
 						<label for="dog-size" class="mb-2 block font-bold">Розмір собаки</label>
-						<select id="dog-size" name="dogSize" class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+						<select id="dog-size" name="dogSize" required aria-describedby="dog-size-error" class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
 							<option value="small">Дрібний</option>
 							<option value="medium" selected>Середній</option>
 							<option value="large">Великий</option>
 						</select>
+						<p id="dog-size-error" class="mt-1 text-sm text-red-700" role="alert"></p>
 					</div>
 
 					<div>
 						<label for="pet-count" class="mb-2 block font-bold">Кількість тварин</label>
-						<select id="pet-count" name="petCount" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
-							<option value="1">1 тварина</option><option value="2">2 тварини</option><option value="3">3 тварини</option>
-						</select>
-						<p id="pet-count-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+						<input id="pet-count" name="petCount" type="number" min="1" max="3" step="1" value="1" required aria-describedby="pet-count-error" class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+						<p id="pet-count-error" class="mt-1 text-sm text-red-700" role="alert"></p>
 					</div>
 
 					<div>
 						<label for="room-type" class="mb-2 block font-bold">Номер</label>
-						<select id="room-type" name="roomType" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+						<select id="room-type" name="roomType" required aria-describedby="room-type-error" class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
 							<option value="standard">Стандарт</option><option value="balcony">Балкон</option><option value="luxury">Люкс</option>
 						</select>
-						<p id="room-type-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+						<p id="room-type-error" class="mt-1 text-sm text-red-700" role="alert"></p>
 					</div>
 
 					<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 						<div>
 							<label for="arrival-date" class="mb-2 block font-bold">Дата заїзду</label>
-							<input id="arrival-date" name="arrival" type="date" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
-							<p id="arrival-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+							<input id="arrival-date" name="arrival" type="date" required aria-describedby="arrival-error" class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+							<p id="arrival-error" class="mt-1 text-sm text-red-700" role="alert"></p>
 						</div>
 						<div>
 							<label for="departure-date" class="mb-2 block font-bold">Дата виїзду</label>
-							<input id="departure-date" name="departure" type="date" required class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
-							<p id="departure-error" class="mt-1 text-sm text-red-800" aria-live="polite"></p>
+							<input id="departure-date" name="departure" type="date" required aria-describedby="departure-error" class="min-h-11 w-full rounded-card border border-ink/30 bg-white px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+							<p id="departure-error" class="mt-1 text-sm text-red-700" role="alert"></p>
 						</div>
 					</div>
 
-					<fieldset>
+					<fieldset id="services-group" class="rounded-card border border-transparent p-2" aria-describedby="services-error">
 						<legend class="mb-2 font-bold">Додаткові послуги</legend>
 						<div class="grid gap-1">
 							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card px-2 hover:bg-brand-soft"><input type="checkbox" name="services" value="walking" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Вигул</span></label>
 							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card px-2 hover:bg-brand-soft"><input type="checkbox" name="services" value="grooming" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Грумінг</span></label>
 							<label class="flex min-h-11 cursor-pointer items-center gap-2 rounded-card px-2 hover:bg-brand-soft"><input type="checkbox" name="services" value="photo" class="h-4 w-4 accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"><span>Фотозвіт</span></label>
 						</div>
+						<p id="services-error" class="mt-1 text-sm text-red-700" role="alert"></p>
 					</fieldset>
 				</form>
 
@@ -207,7 +208,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Додаткові послуги</dt><dd data-calc-value="services">—</dd></div>
 							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Знижка за кількість тварин</dt><dd data-calc-value="multi-discount">—</dd></div>
 							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Знижка за тривалість</dt><dd data-calc-value="duration-discount">—</dd></div>
-							<div class="flex justify-between gap-4 py-2 text-lg font-extrabold"><dt>РАЗОМ</dt><dd data-calc-value="total">Вкажіть дати</dd></div>
+							<div class="flex justify-between gap-4 py-2 text-lg font-extrabold"><dt>РАЗОМ</dt><dd data-calc-value="total">—</dd></div>
 						</dl>
 						<p id="calc-status" class="mt-2 text-sm text-ink" role="status">Вкажіть дати заїзду та виїзду для розрахунку.</p>
 					</div>
