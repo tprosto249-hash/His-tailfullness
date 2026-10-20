@@ -5,10 +5,10 @@
 ## Стек
 
 - HTML
-- Tailwind CSS через CDN
+- Tailwind CSS 3, зібраний локально
 - CSS
-- JavaScript без додаткових бібліотек
-- Локальні зображення та відео в `assets/`
+- Vanilla JavaScript та відкладені UI-бібліотеки
+- Локальні зображення й відео в `assets/`
 
 ## Структура проєкту
 
@@ -19,18 +19,33 @@
 │   ├── icons/
 │   └── images/       # SVG-зображення та MP4-відео
 ├── css/
-│   └── style.css
+│   ├── style.css
+│   ├── tailwind.input.css
+│   └── tailwind.generated.css
 ├── js/
 │   ├── calculator.js
-│   └── contact-form.js
+│   ├── contact-form.js
+│   ├── main.js
+│   ├── navigation.js
+│   ├── validation.js
+│   └── weather-widget.js
+├── robots.txt
+├── sitemap.xml
 ├── index.html
 ├── .gitignore
 └── README.md
 ```
 
-## Запуск локально
+## Збірка та локальний запуск
 
-Збірка та встановлення залежностей не потрібні. Відкрийте `index.html` у браузері або запустіть локальний HTTP-сервер із кореневої папки проєкту:
+Встановіть залежності й зберіть Tailwind CSS:
+
+```bash
+npm install
+npm run build
+```
+
+Після збірки запустіть локальний HTTP-сервер із кореневої папки проєкту:
 
 ```bash
 python -m http.server 8000
@@ -38,7 +53,7 @@ python -m http.server 8000
 
 Потім відкрийте <http://localhost:8000>.
 
-Для завантаження Tailwind CSS, шрифтів та зовнішніх зображень потрібне підключення до інтернету.
+Для зовнішніх шрифтів, зображень, віджета погоди та UI-бібліотек потрібне підключення до інтернету. Swiper, Fancybox, Typed.js і віджет погоди завантажуються відкладено.
 
 ## Опублікована версія
 

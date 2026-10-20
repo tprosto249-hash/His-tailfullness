@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://histailfulness.netlify.app/sitemap.xml

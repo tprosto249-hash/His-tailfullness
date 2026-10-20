@@ -4,31 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Преміальний cage-free готель для собак і котів у Львові: комфортні номери, ветеринарна турбота, щоденні фото та безкоштовний адаптаційний візит.">
+	<link rel="canonical" href="https://histailfulness.netlify.app/">
+	<link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml">
+	<link rel="preload" as="image" href="/assets/images/hero_bg.svg" fetchpriority="high">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="uk_UA">
+	<meta property="og:url" content="https://histailfulness.netlify.app/">
+	<meta property="og:title" content="Його Хвостатість | Готель для собак і котів">
+	<meta property="og:description" content="Преміальний готель для собак і котів у Львові: комфортні номери, ветеринарна турбота та щоденні фото.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&amp;subset=cyrillic,latin&amp;display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://sinoptik.ua/resources/informer/css/informer.css">
 	<title>Його Хвостатість | Готель для собак і котів</title>
-	<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: { DEFAULT: '#f7bd91', soft: '#fcf4ef', accent: '#f4a163', deep: '#bd804d' },
-          ink: { DEFAULT: '#111111', hover: '#33261d' },
-          muted: '#f3f3f3'
-        },
-        fontFamily: { sans: ['Nunito', 'sans-serif'] },
-        borderRadius: { card: '0.625rem' },
-        boxShadow: { video: '0 12px 28px rgba(45,31,20,0.18)' },
-        maxWidth: { container: '75rem' }
-      }
-    }
-  }
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+<link rel="stylesheet" href="css/tailwind.generated.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/calculator.js" defer></script>
 <script src="js/contact-form.js" defer></script>
@@ -39,9 +27,9 @@
 <header id="home" class="relative font-sans text-ink">
 	<div class="header-topbar">
 		<a href="#home" class="flex min-h-11 items-center rounded-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand">
-			<img src="assets/images/logo.svg" alt="Його Хвостатість" class="header-logo-image">
+			<img src="assets/images/logo.svg" alt="Його Хвостатість" width="1024" height="559" class="header-logo-image">
 		</a>
-		<button type="button" id="nav-toggle" aria-label="Відкрити меню" aria-expanded="false" aria-controls="site-nav" class="inline-flex h-11 w-11 items-center justify-center rounded-card transition-colors transition-shadow duration-150 hover:bg-ink/10 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand">
+		<button type="button" id="nav-toggle" aria-label="Відкрити меню" aria-expanded="false" aria-controls="site-nav" class="inline-flex h-11 w-11 items-center justify-center rounded-card transition-[background-color,box-shadow] duration-150 hover:bg-ink/10 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand">
 			<svg class="nav-icon-open h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
 			<svg class="nav-icon-close h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
 		</button>
@@ -103,14 +91,6 @@
 		</nav>
 	</div>
 </header>
-
-<script>
-const toggle = document.getElementById('nav-toggle'), panel = document.getElementById('site-nav');
-const setOpen = open => { toggle.setAttribute('aria-expanded', open); toggle.setAttribute('aria-label', `${open ? 'Закрити' : 'Відкрити'} меню`); panel.dataset.open = open; panel.setAttribute('aria-hidden', !open); panel.toggleAttribute('inert', !open); };
-toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
-panel.addEventListener('click', event => { if (event.target.closest('a')) setOpen(false); });
-document.addEventListener('keydown', event => { if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); } });
-</script>
 
 	<main>
 	<section class="hero" id="about" aria-labelledby="hero-title">
@@ -200,7 +180,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 
 				<aside class="rounded-card bg-white p-5 shadow-sm sm:p-6" aria-labelledby="calc-result-title">
 					<h3 id="calc-result-title" class="text-2xl font-bold">Попередній розрахунок</h3>
-					<div id="calc-result" aria-live="polite" aria-atomic="true" class="mt-4">
+					<div id="calc-result" class="mt-4">
 						<dl class="grid gap-2 text-sm sm:text-base">
 							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>База</dt><dd data-calc-value="base">—</dd></div>
 							<div class="flex justify-between gap-4 border-b border-ink/10 py-2"><dt>Номер</dt><dd data-calc-value="room">—</dd></div>
@@ -228,7 +208,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 		</header>
 		<div class="benefit-grid mx-auto grid max-w-container grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			<article id="daily-updates" class="benefit-card overflow-hidden rounded-card bg-white text-ink shadow-sm">
-				<img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Собака під час щоденного фотозвіту" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+				<img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Собака під час щоденного фотозвіту" width="800" height="600" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
 				<div class="grid gap-3 p-5">
 					<h3 class="text-xl font-bold">Ми створили «Його Хвостатість», щоб повернути вам спокій.</h3>
 					<p>У нас немає кліток чи вольєрів — лише затишні номери, ветеринарний нагляд та щоденні фотозвіти.</p>
@@ -236,7 +216,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 				</div>
 			</article>
 			<article id="vet" class="benefit-card overflow-hidden rounded-card bg-white text-ink shadow-sm">
-				<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Французький бульдог у жовтій кофті" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+				<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Французький бульдог у жовтій кофті" width="800" height="600" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
 				<div class="grid gap-3 p-5">
 					<p class="eyebrow">Чесний калькулятор</p>
 					<h3 class="text-xl font-bold">100% визначеність ще до бронювання</h3>
@@ -249,7 +229,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 				</div>
 			</article>
 			<article id="adapt" class="benefit-card overflow-hidden rounded-card bg-white text-ink shadow-sm">
-				<img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Собака знайомиться з новим місцем" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+				<img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Собака знайомиться з новим місцем" width="800" height="600" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
 				<div class="grid gap-3 p-5">
 					<p class="eyebrow">Прозорість та визначеність</p>
 					<h3 class="text-xl font-bold">Ніякої цінової невизначеності.</h3>
@@ -413,19 +393,19 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 			<p>Побачте, де відпочиватимуть і гратимуться ваші улюбленці.</p>
 		</div>
 		<div class="media-video-wrap mx-auto max-w-container overflow-hidden rounded-card shadow-video">
-			<img class="media-video block aspect-video w-full object-cover" src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Цуценя гуляє на заході сонця" loading="lazy" decoding="async">
+				<img class="media-video block aspect-video w-full object-cover" src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" alt="Цуценя гуляє на заході сонця" width="1000" height="563" loading="lazy" decoding="async">
 		</div>
 	</section>
 
 	<section class="gallery block" id="gallery" aria-labelledby="gallery-title">
 		<div class="section-heading"><h2 id="gallery-title">Галерея</h2><p>Наші гості, затишні номери та солодкий сон на сонці.</p></div>
 		<div class="gallery-grid">
-			<a class="gallery-link" href="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Собака солодко спить у м’якому лежаку" aria-label="Переглянути фото: собака солодко спить у м’якому лежаку"><div class="image-frame"><img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собака солодко спить у м’якому лежаку" loading="lazy" decoding="async"></div></a>
-			<a class="gallery-link" href="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Пес радісно гуляє з опікуном" aria-label="Переглянути фото: пес радісно гуляє з опікуном"><div class="image-frame"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес радісно гуляє з опікуном" loading="lazy" decoding="async"></div></a>
-			<a class="gallery-link" href="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Маленький собака відпочиває в номері" aria-label="Переглянути фото: маленький собака відпочиває в номері"><div class="image-frame"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Маленький собака відпочиває в номері" loading="lazy" decoding="async"></div></a>
-			<a class="gallery-link" href="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Пес грається з м’якими іграшками" aria-label="Переглянути фото: пес грається з м’якими іграшками"><div class="image-frame"><img src="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Пес грається з м’якими іграшками" loading="lazy" decoding="async"></div></a>
-			<a class="gallery-link" href="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Собаки відпочивають разом після гри" aria-label="Переглянути фото: собаки відпочивають разом після гри"><div class="image-frame"><img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Собаки відпочивають разом після гри" loading="lazy" decoding="async"></div></a>
-			<a class="gallery-link" href="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Цуценя гуляє на заході сонця" aria-label="Переглянути фото: цуценя гуляє на заході сонця"><div class="image-frame"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Цуценя гуляє на заході сонця" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Собака солодко спить у м’якому лежаку" aria-label="Переглянути фото: собака солодко спить у м’якому лежаку"><div class="image-frame"><img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Собака солодко спить у м’якому лежаку" width="700" height="700" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Пес радісно гуляє з опікуном" aria-label="Переглянути фото: пес радісно гуляє з опікуном"><div class="image-frame"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Пес радісно гуляє з опікуном" width="700" height="700" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Маленький собака відпочиває в номері" aria-label="Переглянути фото: маленький собака відпочиває в номері"><div class="image-frame"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Маленький собака відпочиває в номері" width="700" height="700" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Пес грається з м’якими іграшками" aria-label="Переглянути фото: пес грається з м’якими іграшками"><div class="image-frame"><img src="https://images.unsplash.com/photo-1587559070757-f72a388edbba?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Пес грається з м’якими іграшками" width="700" height="700" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Собаки відпочивають разом після гри" aria-label="Переглянути фото: собаки відпочивають разом після гри"><div class="image-frame"><img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Собаки відпочивають разом після гри" width="700" height="700" loading="lazy" decoding="async"></div></a>
+			<a class="gallery-link" href="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" data-fancybox="hotel-gallery" data-caption="Цуценя гуляє на заході сонця" aria-label="Переглянути фото: цуценя гуляє на заході сонця"><div class="image-frame"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Цуценя гуляє на заході сонця" width="700" height="700" loading="lazy" decoding="async"></div></a>
 		</div>
 	</section>
 
@@ -470,7 +450,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 				</div>
 			</div>
 			<div class="image-frame cta-image rounded-card">
-				<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Двоє собак відпочивають разом" loading="lazy" decoding="async">
+				<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" alt="Двоє собак відпочивають разом" width="1000" height="750" loading="lazy" decoding="async">
 			</div>
 		</div>
 	</section>
@@ -512,7 +492,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 						</div>
 					</div>
 					<button class="button button-dark !min-h-11 !w-full rounded-card px-5 font-semibold transition-colors hover:bg-ink-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2" type="submit">Надіслати</button>
-					<p id="contact-status" role="status" aria-live="polite"></p>
+					<p id="contact-status" role="status"></p>
 				</form>
 			</div>
 			<aside class="contact-details grid gap-5" aria-label="Контактна інформація та розташування">
@@ -520,7 +500,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 					<h3 class="text-xl font-bold">Контактна інформація</h3>
 					<address class="mt-3 grid gap-2 not-italic">
 						<p>м. Львів, вул. Прикладна, 1</p>
-						<a href="tel:+380321234567">+380 32 123 45 87</a>
+						<a href="tel:+380321234567">+380 32 123 45 67</a>
 						<a href="mailto:histailfullnes@gmail.com">histailfullnes@gmail.com</a>
 					</address>
 				</div>
@@ -565,7 +545,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 		<div class="mx-auto grid w-full max-w-container grid-cols-1 gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
 			<section aria-labelledby="footer-brand-title">
 				<a href="#home" class="inline-flex min-h-11 items-center rounded-card transition-opacity duration-150 hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
-					<img src="assets/images/logo.svg" alt="Його Хвостатість" class="logo-outline h-auto w-[130px]">
+					<img src="assets/images/logo.svg" alt="Його Хвостатість" width="1024" height="559" class="logo-outline h-auto w-[130px]">
 				</a>
 				<h2 id="footer-brand-title" class="mt-4 text-lg font-bold">Його Хвостатість</h2>
 				<p class="mt-2 max-w-sm text-sm leading-6">Преміальний готель, де собаки й коти відпочивають із турботою, увагою та відчуттям дому.</p>
@@ -621,17 +601,8 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && to
 			</div>
 		</div>
 	</footer>
-	<div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4" aria-hidden="true">
-		<div id="successDialog" role="dialog" aria-modal="true" aria-labelledby="successModalTitle" aria-describedby="successModalMessage" tabindex="-1" class="w-full max-w-lg rounded-card bg-white p-6 text-ink shadow-video sm:p-8">
-			<h2 id="successModalTitle" class="text-2xl font-bold">Дякуємо!</h2>
-			<p id="successModalMessage" class="mt-3">Форма успішно пройшла клієнтську валідацію. Демонстрація успішного надсилання.</p>
-			<button id="closeSuccessModal" type="button" class="mt-6 inline-flex min-h-11 items-center justify-center rounded-card bg-ink px-5 font-semibold text-white transition-colors hover:bg-ink-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2">Закрити</button>
-		</div>
-	</div>
-	<script src="https://sinoptik.ua/api/informer/content?loc=bwCOPQ6RBMAlPUoebrAObrFr&amp;cem=iKDRcObHcSjHBhD7cM=0cTYUcnHObMFrbSju2M2U2kj" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 	<script src="js/main.js" defer></script>
+	<script src="js/navigation.js" defer></script>
+	<script src="js/weather-widget.js" defer></script>
 </body>
 </html>

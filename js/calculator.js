@@ -10,7 +10,7 @@
     discounts: { additionalPet: 0.15, week: 0.05, fortnight: 0.10 },
     seasonalMultiplier: 1.2
   };
-  const MAX_NIGHTS = 90;
+  const MAX_NIGHTS = 90; 
   const MIN_PETS = 1;
   const MAX_PETS = 3;
   const currency = new Intl.NumberFormat('uk-UA', {
@@ -344,21 +344,24 @@
     emailRequestLink.setAttribute('aria-disabled', 'false');
   }
 
-  calculator.addEventListener('input', event => {
-    if (event.target === arrival || event.target === departure) {
-      touchedDates.add(event.target);
-    }
-    dateValidationStarted = true;
-    update();
-  });
+  function handleCalculatorEvent(event) {
+    const target = event.target;
+    const changeOnly = target.matches(
+      'select, input[type="checkbox"], input[type="radio"]'
+    );
 
-  calculator.addEventListener('change', event => {
-    if (event.target === arrival || event.target === departure) {
-      touchedDates.add(event.target);
+    if (event.type === 'input' && changeOnly) return;
+    if (event.type === 'change' && !changeOnly) return;
+
+    if (target === arrival || target === departure) {
+      touchedDates.add(target);
     }
     dateValidationStarted = true;
     update();
-  });
+  }
+
+  calculator.addEventListener('input', handleCalculatorEvent);
+  calculator.addEventListener('change', handleCalculatorEvent);
 
   emailRequestLink.addEventListener('click', event => {
     if (emailRequestLink.getAttribute('aria-disabled') === 'true') {

@@ -624,8 +624,25 @@ h3 {
   pointer-events: none;
 }
 
-.reviews-swiper .swiper-pagination-bullet {
+.reviews-swiper .swiper-pagination .swiper-pagination-bullet {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  background: transparent;
   pointer-events: auto;
+}
+
+.reviews-swiper .swiper-pagination .swiper-pagination-bullet::after {
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: var(--color-text);
+  content: "";
+}
+
+.reviews-swiper .swiper-pagination .swiper-pagination-bullet-active::after {
+  background: var(--color-primary-accent);
 }
 
 .reviews-swiper .swiper-button-prev,
@@ -679,6 +696,16 @@ h3 {
 .reviews-swiper .swiper-pagination-bullet:focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
+}
+
+#contact .sin-informer__date,
+#contact .sin-informer__time,
+#contact .sin-informer__location,
+#contact .sin-informer__temp,
+#contact .sin-informer__marker,
+#contact .sin-informer__footer,
+#contact .sin-informer__footer a {
+  color: #111;
 }
 
 .hero-copy .hero-typed {
@@ -796,7 +823,7 @@ h3 {
 }
 
 footer a:hover {
-  color: var(--color-button-hover);
+  text-decoration: underline;
 }
 
 /* Accessibility utilities */
@@ -926,5 +953,20 @@ html body .duration-200 {
 @media (min-width: 1024px) {
   .header-topbar {
     min-height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

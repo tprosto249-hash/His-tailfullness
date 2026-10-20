@@ -10,21 +10,6 @@ const phone = document.getElementById('phone');
 const message = document.getElementById('message');
 const agreement = document.getElementById('agreement');
 const fields = [username, email, phone, message, agreement];
-const successModal = document.getElementById('successModal');
-const successDialog = document.getElementById('successDialog');
-const closeSuccessModalButton = document.getElementById('closeSuccessModal');
-const submitButton = feedbackForm.querySelector('button[type="submit"]');
-
-if (
-  !(successModal instanceof HTMLDivElement) ||
-  !(successDialog instanceof HTMLDivElement) ||
-  !(closeSuccessModalButton instanceof HTMLButtonElement) ||
-  !(submitButton instanceof HTMLButtonElement)
-) {
-  throw new Error('Не знайдено всі елементи модального вікна або кнопки форми.');
-}
-
-let inertElements = [];
 
 function getErrorElement(field) {
   const errorElement = document.getElementById(`${field.id}Error`);
@@ -52,42 +37,6 @@ function showSuccess(field) {
   field.setAttribute('aria-invalid', 'false');
   field.classList.remove('!border-red-500');
   field.classList.add('!border-green-500');
-}
-
-function clearError(field) {
-  const errorElement = getErrorElement(field);
-  errorElement.textContent = '';
-  errorElement.classList.add('hidden');
-  field.removeAttribute('aria-invalid');
-  field.classList.remove('!border-red-500', '!border-green-500');
-}
-
-function openSuccessModal() {
-  inertElements = Array.from(document.body.children)
-    .filter(element => element !== successModal && element instanceof HTMLElement)
-    .map(element => ({ element, wasInert: element.inert }));
-
-  inertElements.forEach(({ element }) => {
-    element.inert = true;
-  });
-
-  successModal.classList.remove('hidden');
-  successModal.classList.add('flex');
-  successModal.setAttribute('aria-hidden', 'false');
-  closeSuccessModalButton.focus();
-}
-
-function closeSuccessModal() {
-  successModal.classList.add('hidden');
-  successModal.classList.remove('flex');
-  successModal.setAttribute('aria-hidden', 'true');
-
-  inertElements.forEach(({ element, wasInert }) => {
-    element.inert = wasInert;
-  });
-  inertElements = [];
-
-  submitButton.focus();
 }
 
 function validateName() {
@@ -164,28 +113,7 @@ fields.forEach(field => {
   });
 });
 
-closeSuccessModalButton.addEventListener('click', closeSuccessModal);
-
-successModal.addEventListener('click', event => {
-  if (event.target === successModal) {
-    closeSuccessModal();
-  }
-});
-
-successDialog.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    event.preventDefault();
-    closeSuccessModal();
-    return;
-  }
-
-  if (event.key === 'Tab') {
-    event.preventDefault();
-    closeSuccessModalButton.focus();
-  }
-});
-
-// Capture invalid submissions before the existing mailto submit handler can run.
+// Block invalid submissions, but let valid ones reach the mailto handler.
 feedbackForm.addEventListener('submit', event => {
   const isValid = [
     validateName(),
@@ -195,15 +123,9 @@ feedbackForm.addEventListener('submit', event => {
     validateAgreement()
   ].every(Boolean);
 
-  event.preventDefault();
-  event.stopImmediatePropagation();
-
   if (!isValid) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
     fields.find(field => field.getAttribute('aria-invalid') === 'true')?.focus();
-    return;
   }
-
-  feedbackForm.reset();
-  fields.forEach(clearError);
-  openSuccessModal();
 }, true);
